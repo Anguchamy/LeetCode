@@ -3,8 +3,8 @@ class Solution {
         HashMap<Integer, String> map = new HashMap<>();
 		map.put(1,"1");
 		map.put(2,"11");
+        int arr[] = new int[10];
 		for(int i=3;i<=30;i++) {
-			int arr[] = new int[10];
 			String temp = map.get(i-1);
 			String tempres = "";
 			arr[temp.charAt(0)-'0']++;
