@@ -4,7 +4,7 @@ class Solution {
 		map.put(1,"1");
 		map.put(2,"11");
 		for(int i=3;i<=30;i++) {
-			int arr[] = new int[11];
+			int arr[] = new int[10];
 			String temp = map.get(i-1);
 			String tempres = "";
 			arr[temp.charAt(0)-'0']++;
@@ -16,11 +16,11 @@ class Solution {
 					arr[temp.charAt(tempi-1) - '0'] = 0;
 					arr[temp.charAt(tempi) - '0']++;
 				}
-			}
-			for(int chari=1;chari<11;chari++) {
-				if(arr[chari] > 0) {
-					tempres += arr[chari] +""+ chari;
-				}
+
+                if(tempi == temp.length()-1) {
+                    tempres += arr[temp.charAt(tempi) - '0'] + "" + temp.charAt(tempi);
+                    arr[temp.charAt(tempi) - '0'] = 0;
+                }
 			}
 
 			map.put(i, tempres);
